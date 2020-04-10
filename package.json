@@ -1,0 +1,19 @@
+{
+  "name": "@futuretense/curve-interface",
+  "version": "1.0.0",
+  "description": "",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Johan Stén <johan@futuretense.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^13.11.1",
+    "typescript": "^3.8.3"
+  }
+}
