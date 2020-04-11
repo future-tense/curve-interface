@@ -1,29 +1,27 @@
 
-export interface ICurve<S, P> {
-    basepoint: P;
-    pointFromBuffer(buf: Buffer): P;
-    scalarFromBuffer(buf: Buffer): S;
-    scalarFromHash(...args: Buffer[]): S;
-    randomScalar(): S;
+export interface Curve {
+    basepoint: Point;
+    pointFromBuffer(buf: Buffer): Point;
+    scalarFromBuffer(buf: Buffer): Scalar;
+    scalarFromHash(...args: Buffer[]): Scalar;
+    randomScalar(): Scalar;
 }
 
-export interface IScalar {
-    s: any;
-    add(s: IScalar): IScalar;
-    sub(s: IScalar): IScalar;
-    mul(s: IScalar): IScalar;
-    inverse(): IScalar;
-    copy(): IScalar;
+export interface Point {
+    add(p: Point): Point;
+    sub(p: Point): Point;
+    mul(p: Scalar): Point;
+    copy(): Point;
     toBuffer(): Buffer;
-    equals(s: IScalar): boolean;
+    equals(p: Point): boolean;
 }
 
-export interface IPoint {
-    p: any;
-    add(p: IPoint): IPoint;
-    sub(p: IPoint): IPoint;
-    mul(p: IScalar): IPoint;
-    copy(): IPoint;
+export interface Scalar {
+    add(s: Scalar): Scalar;
+    sub(s: Scalar): Scalar;
+    mul(s: Scalar): Scalar;
+    inverse(): Scalar;
+    copy(): Scalar;
     toBuffer(): Buffer;
-    equals(p: IPoint): boolean;
+    equals(s: Scalar): boolean;
 }
